@@ -6,4 +6,4 @@ Pillow
 numpy
 torch
 torchvision
-git+https://github.com/FacePerceiver/facer.git
+pyfacer

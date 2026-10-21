@@ -1,0 +1,9 @@
+
+fastapi
+uvicorn[standard]
+python-multipart
+Pillow
+numpy
+torch
+torchvision
+git+https://github.com/FacePerceiver/facer.git

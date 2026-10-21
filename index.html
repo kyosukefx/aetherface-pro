@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AetherFace Pro</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070b14;color:#e8f7ff;font:16px Arial,sans-serif;padding:22px}
+main{max-width:700px;margin:auto}
+h1{color:#42e8f5;letter-spacing:2px}
+section{background:#101827;border:1px solid #244057;border-radius:14px;padding:18px;margin-top:18px}
+button{background:#42e8f5;color:#061018;border:0;border-radius:8px;padding:12px;font-weight:bold}
+input{max-width:100%;margin:12px 0}
+img{display:block;max-width:100%;max-height:420px;margin-top:15px;border-radius:10px}
+p{line-height:1.5}
+.muted{color:#9bb0c5;font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>AETHERFACE PRO</h1>
+<p class="muted">Face Detection Studio · versão de teste</p>
+
+<section>
+<h2>Análise facial</h2>
+<p>Selecione uma imagem para visualizar no aplicativo.</p>
+<input type="file" id="photo" accept="image/*">
+<img id="preview" hidden alt="Prévia da imagem">
+<p id="status">Aguardando imagem.</p>
+</section>
+
+<section>
+<h2>Estado do sistema</h2>
+<p id="system">Interface carregada. API de detecção ainda não conectada.</p>
+<p class="muted">Esta versão não identifica pessoas nem pesquisa rostos na internet.</p>
+</section>
+</main>
+
+<script>
+const photo=document.getElementById('photo');
+const preview=document.getElementById('preview');
+const status=document.getElementById('status');
+
+photo.addEventListener('change',()=>{
+ const file=photo.files[0];
+ if(!file)return;
+ preview.src=URL.createObjectURL(file);
+ preview.hidden=false;
+ status.textContent='Imagem carregada localmente: '+file.name;
+});
+</script>
+</body>
+</html>
